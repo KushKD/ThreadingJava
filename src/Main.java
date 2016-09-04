@@ -150,7 +150,7 @@ public class Main {
             @Override
             public void run() {
 
-                for(int i=0 ;i<10000;i++){
+                for(int i=0 ;i<150000;i++){
                    // count++;
                     increment();
                 }
@@ -161,7 +161,7 @@ public class Main {
             @Override
             public void run() {
 
-                for(int i=0 ;i<10000;i++){
+                for(int i=0 ;i<150000;i++){
                    // count++;
                     increment();
                 }
