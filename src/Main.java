@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by kush on 03/09/16.
  */
@@ -70,6 +72,27 @@ public class Main {
 
         x.start();
         y.run();
+
+
+        //We have a problem if data is shared in more than one thread
+        //Data being cashed   Use of the VOLATILE keyword  We have a class called processor
+
+        Processor p1 = new Processor();
+        p1.start();
+
+
+
+        Shared_Data_Processor SDP = new Shared_Data_Processor();
+        SDP.start();
+        //Problem comes when we have to stop the tread in a proper way. So we use Intrupttions. We will be sharing the data in the Thread
+        //Shared_Data_Processor is the class
+        System.out.println("Press return key to stop the shared data processor thread");
+        Scanner scanner = new Scanner(System.in);  //Taking the input to inturrept the thread
+        scanner.nextLine();
+
+        //Stoping the Thread
+        SDP.shutdown();
+
 
 
 
