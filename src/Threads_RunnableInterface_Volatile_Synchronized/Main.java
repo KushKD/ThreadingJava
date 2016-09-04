@@ -140,6 +140,13 @@ public class Main {
         //untill the first thread releases the Intrinsic Lock by the methord finishing and executing.
         //Whenever we got multiple threads accesing shared data
 
+        //To be Remembered
+       // If you use a synchronized method, the lock is on the object containing that method (on "this"), yes.
+        // So if you want multiple synchronized methods doing different things, you need to use synchronized blocks with lock objects,
+        // or just locks.
+        // So yes, you understand correctly I think. Only one synchronized method can run at a given time.
+        // The others have to wait for the lock on "this" to be released.
+
         Main main = new Main();
         main.dowork();
 
