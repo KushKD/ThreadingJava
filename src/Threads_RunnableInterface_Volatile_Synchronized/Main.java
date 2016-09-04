@@ -147,6 +147,11 @@ public class Main {
         // So yes, you understand correctly I think. Only one synchronized method can run at a given time.
         // The others have to wait for the lock on "this" to be released.
 
+        //Difference between JOIN VOLATILE and SYNCHRONIZED
+        //Volatile just makes sure a variable is not cached by a thread. It's not much use usually.
+        // Synchronized (which also makes variables volatile as well) is what you normally use for synchronization.
+        // The join() method just waits till the thread has completed.
+
         Main main = new Main();
         main.dowork();
 
