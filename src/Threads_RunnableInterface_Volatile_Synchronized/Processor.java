@@ -1,3 +1,5 @@
+package Threads_RunnableInterface_Volatile_Synchronized;
+
 /**
  * Created by kush on 04/09/16.
  */
@@ -9,7 +11,7 @@ public class Processor extends Thread {
         //First we have an infinite loop
 
         while(true){
-            System.out.println("Processor Hello Infinite Running");
+            System.out.println("Threads_RunnableInterface_Volatile_Synchronized.Processor Hello Infinite Running");
 
             //Pause the thred for 10th of the second
             try {

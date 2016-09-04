@@ -1,3 +1,5 @@
+package Threads_RunnableInterface_Volatile_Synchronized;
+
 import java.util.Scanner;
 
 /**
@@ -13,7 +15,7 @@ public class Main {
 
     public static void main(String args[]){
 
-       // Runnable_Interface_Class T = new Runnable_Interface_Class();
+       // Threads_RunnableInterface_Volatile_Synchronized.Runnable_Interface_Class T = new Threads_RunnableInterface_Volatile_Synchronized.Runnable_Interface_Class();
        // T.run();
 
         //Runner 1 running in own thread
@@ -32,8 +34,8 @@ public class Main {
         Thread t1 = new Thread(new Runnable_Interface_Class());
         Thread t2 = new Thread(new Runnable_Interface_Class());
 
-        t1.start(); //Runnable_Interface_Class One Running in its Own Thread
-        t2.start(); //Runnable_Interface_Class Two Running in its Own Thread
+        t1.start(); //Threads_RunnableInterface_Volatile_Synchronized.Runnable_Interface_Class One Running in its Own Thread
+        t2.start(); //Threads_RunnableInterface_Volatile_Synchronized.Runnable_Interface_Class Two Running in its Own Thread
 
         //Third way to create a thread is
         Thread x = new Thread(new Runnable() {
@@ -83,7 +85,7 @@ public class Main {
         //We have a problem if data is shared in more than one thread
         //Data being cashed   Use of the VOLATILE keyword  We have a class called processor
 
-      //  Processor p1 = new Processor();   working code with infinite loop
+      //  Threads_RunnableInterface_Volatile_Synchronized.Processor p1 = new Threads_RunnableInterface_Volatile_Synchronized.Processor();   working code with infinite loop
       //  p1.start();       working code with infinite loop
 
 
@@ -92,7 +94,7 @@ public class Main {
         SDP.start();
         //Problem comes when we have to stop the tread in a proper way. So we use Intrupttions.
         // We will be sharing the data among two Thread
-        //Shared_Data_Processor is the class
+        //Threads_RunnableInterface_Volatile_Synchronized.Shared_Data_Processor is the class
         System.out.println("Press return key to stop the shared data processor thread");
         Scanner scanner = new Scanner(System.in);  //Taking the input to inturrept the thread
         scanner.nextLine();
@@ -132,7 +134,7 @@ public class Main {
         //Now when we run the code the count is 20000 always.
         //What synchronize actually does is :
         //Every object is JAVA has an Intrinsic Lock or Monitor Lock , we can also call it MUTEX , and if we call the synchronized method
-        //of the object, in this we are calling the Main object , we have to acquire the Intrinsic lock before we can call it.
+        //of the object, in this we are calling the Threads_RunnableInterface_Volatile_Synchronized.Main object , we have to acquire the Intrinsic lock before we can call it.
         //And the thing is only one thread can acquire the Intrinsic lock at a Time and if onr Thread acquires the Intrinsic Lock and runs
         //the method i.e. increment and if other threead at the same time tries to call this methord then second thread just have to wait
         //untill the first thread releases the Intrinsic Lock by the methord finishing and executing.

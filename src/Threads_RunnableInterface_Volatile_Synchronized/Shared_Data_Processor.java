@@ -1,11 +1,13 @@
+package Threads_RunnableInterface_Volatile_Synchronized;
+
 /**
  * Created by kush on 04/09/16.
  */
 public class Shared_Data_Processor extends Thread {
 
-    //Stage 1 : -  This code will run without an error. But there is a catch Thare two threadsi.e. the main thread aand the Shared_Data_Processor thread.
-    //Both these threads are trying to access the running keyword.Main thread is writing the state to runing and
-    //Shared_Data_Processor is reading the state of running .
+    //Stage 1 : -  This code will run without an error. But there is a catch Thare two threadsi.e. the main thread aand the Threads_RunnableInterface_Volatile_Synchronized.Shared_Data_Processor thread.
+    //Both these threads are trying to access the running keyword.Threads_RunnableInterface_Volatile_Synchronized.Main thread is writing the state to runing and
+    //Threads_RunnableInterface_Volatile_Synchronized.Shared_Data_Processor is reading the state of running .
     //To stop the cashing of the variables we use the volatile keyword.
     //private  boolean running = true;
 
@@ -18,7 +20,7 @@ public class Shared_Data_Processor extends Thread {
         //super.run();
 
         while(running){
-            System.out.println("Shared Data Processor Hello");
+            System.out.println("Shared Data Threads_RunnableInterface_Volatile_Synchronized.Processor Hello");
 
             //Pause the thread for 10th of the millisecond
 

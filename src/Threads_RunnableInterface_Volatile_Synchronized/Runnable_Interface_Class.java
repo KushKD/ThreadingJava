@@ -1,14 +1,14 @@
+package Threads_RunnableInterface_Volatile_Synchronized;
+
 /**
  * Created by kush on 03/09/16.
  */
-public class Main_Thread_Class extends Thread {
-
+public class Runnable_Interface_Class implements Runnable {
     @Override
     public void run() {
-       // super.run();
 
-        for (int i=0;i<20;i++){
-            System.out.println("Hello" + i);
+        for (int i = 0; i < 20; i++) {
+            System.out.println("Hello This is Runnable" + i);
             //Slow a Loop a Bit ,
             //We'll use static methord of the Tread class
 
@@ -18,6 +18,9 @@ public class Main_Thread_Class extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
         }
     }
 }
+
+
