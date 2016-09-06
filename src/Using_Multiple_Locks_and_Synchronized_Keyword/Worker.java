@@ -2,7 +2,6 @@ package Using_Multiple_Locks_and_Synchronized_Keyword;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -91,7 +90,7 @@ public class Worker {
 
 public void process(){
 
-    for(int i=0; i<1000; i++){
+    for(int i=0; i<10000; i++){
         stage1();
         stage2();
     }
