@@ -79,7 +79,7 @@ public class Main {
 
 
         x.start();
-        y.run();
+        y.start();
 
         //Basic Thread Synchronization
         //We have a problem if data is shared in more than one thread

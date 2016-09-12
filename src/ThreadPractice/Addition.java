@@ -18,6 +18,7 @@ public class Addition {
 
 
         count += i;
+        System.out.println( "i is: "+ i +" count is: " + count);
     }
 
 
@@ -41,8 +42,8 @@ public class Addition {
 
                 for(int i=0;i<1000;i++){
 
-                    if(i%3==0 || i%5 ==0 ){
-                        System.out.println("Multiple is:"+ i+"\n");
+                    if(i%3==0 ){
+                        System.out.println("Multiple of 3 is:"+ i+"\n");
 
                         //sum++;
                        // increment();
@@ -55,12 +56,32 @@ public class Addition {
             }
         });
 
+        Thread t2= new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                for(int i=0;i<1000;i++){
+
+                    if(i%5==0 ){
+                        System.out.println("Multiple of 5 is:"+ i+"\n");
+
+                        //sum++;
+                        // increment();
+                        Addition(i);
+
+                    }
+
+                }
+
+            }
+        });
+
         t1.start();
-       // t2.start();
+        t2.start();
 
         try {
             t1.join();
-           // t2.join();
+            t2.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
