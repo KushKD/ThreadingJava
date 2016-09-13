@@ -10,13 +10,13 @@ package ThreadPractice;
 
  Find the sum of all the multiples of 3 or 5 below 1000.
  */
-public class Addition {
+public class Addition_Question_One {
 
 
 
 
 
-    private volatile int i;
+    private  int i;
     private  int count =0;
 
 
@@ -29,8 +29,8 @@ Object lock = new Object();
 synchronized (lock) {
 
     if (i % 3 == 0 || i % 5 == 0 && i<1000) {
-        System.out.print(i + "\t" + ThreadName + "\n");
-        count = count + i;
+        System.out.print(i + "\t" + ThreadName + "\t" + (count+=i) + "\n");
+      //  count = count + i;
     }
     i++;
 }
@@ -50,7 +50,7 @@ synchronized (lock) {
 
 
 
-        Addition main = new Addition();
+        Addition_Question_One main = new Addition_Question_One();
         main.dowork();
 
 
@@ -93,18 +93,31 @@ synchronized (lock) {
             }
         });
 
+        Thread t4= new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                process("Thread 4");
+
+
+            }
+        });
+        Thread t5= new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                process("Thread 5");
+
+
+            }
+        });
+
         t1.start();
         t2.start();
         t3.start();
+      
 
-        try {
-            t1.join();
-            t2.join();
-            t3.join();
-            System.out.println("Count is:- " + count);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
 
 
 
@@ -113,9 +126,10 @@ synchronized (lock) {
     private void process(String ThreadName) {
 
 
-            while (i < 1000) {
-                increment_i(ThreadName);
-            }
+    while (i < 1000) {
+        increment_i(ThreadName);
+    }
+
 
 
 
